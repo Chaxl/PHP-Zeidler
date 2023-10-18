@@ -7,13 +7,13 @@
     <title>PHP Hundert Zahlen</title>
 </head>
 <body>
-<
+
     <?php
     $i=1;
-    for ($j=1; $j <=10; $j++){
+    for ($j=1; $j <=10; $j++){          //zeilen
         echo "<table>";
         echo "<tr>";
-        for ($h=1; $h <= 10; $h++){
+        for ($h=1; $h <= 10; $h++){     //spalten
             echo "<td>$i</td>";
             $i++;
         }
@@ -26,5 +26,6 @@
 //    echo "</div>";
 //}
     ?>
+
 </body>
 </html>
