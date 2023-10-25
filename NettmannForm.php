@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    $_SESSION['txtKDNR'] = $_POST['txtKDNR'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,18 +15,19 @@
 </head>
 <body>
 
-<?php
-?>
+
 
 <h1>Mietwagen</h1>
 <form method='post' action='auswertung.php'>
 
-    <label for ='txtKDNR'>Kundennummer:</label>
-    <input type='text' id='txtKDNR' name='txtKDNR'><br><br>
+<?php
 
-    <label>Welche Fahrzeugklasse bevorzugen Sie:</label><br>
+    echo "Kundennummer: $_SESSION[txtKDNR]<br><br>";
+?>
+    <!-- <input type='text' id='txtKDNR' name='txtKDNR'><br><br>-->
 
-    <input type='radio' id='Kleinwagen' name='radFKlasse' value='Kleinwagen'>
+    <label>Welche Fahrzeugklasse bevorzugen Sie:</label></p>
+    <input type='radio' id='Kleinwagen' name='radFKlasse' value='Kleinwagen' checked>
     <label for='Kleinwagen'>Kleinwagen</label><br>
     <input type='radio' id='Kompaktklasse' name='radFKlasse' value='Kompaktklasse'>
     <label for='Kompaktklasse'>Kompaktklasse</label><br>
@@ -29,8 +36,7 @@
     <input type='radio' id='Luxusklasse' name='radFKlasse' value='Luxusklasse'>
     <label for='Luxusklasse'>Luxusklasse</label><br><br>
 
-    <label>Welche Zusatzausstattung wünschen Sie:</label><br>
-
+    <label>Welche Zusatzausstattung wünschen Sie:</label></p>
     <input type='checkbox' id='Klimaanlage' name='chkAussKlima' value='Klimaanlage'>
     <label for='Klimaanlage'>Klimaanlage</label><br>
     <input type='checkbox' id='Navigator' name='chkAussNavi' value='Navigator'>
@@ -40,7 +46,7 @@
 
     <label for='optAbholOrt'>Wo wollen Sie das Auto abholen:</label><br>
     
-    <select id='optAbholOrt'>
+    <select id='optAbholOrt' name='optAbholOrt'>
         <option value='AN'>Autohaus Nettmann</option>
         <option value='TS'>Tankstelle</option>
         <option value='SB'>S-Bahnstation</option>
